@@ -6,6 +6,20 @@ const htmlmin = require('html-minifier-terser').minify;
 const rename = require('gulp-rename');
 const clean= require('gulp-clean');
 const through2= require('through2');
+const imagemin= require('gulp-imagemin');
+
+// Compression des images
+gulp.task('compress-images', function(){
+    return gulp.src('src/images/*.{png,jpg,gif}')
+        .pipe(imagemin([
+            imagemin.gifsicle({interlaced: true, optimizationLevel: 3}),
+            imagemin.mozjpeg({quality: 75, progressive: true}),
+            imagemin.optipng({optimizationLevel: 5 })
+        ]))
+        .pipe(gulp.dest('dist/images'));
+});
+
+
 // Tâche de nettoyage du dossier de distribution
 gulp.task('clean', function(){
     return gulp.src('./dist', {read: false, allowEmpty: true})
