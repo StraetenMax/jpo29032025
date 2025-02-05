@@ -1,0 +1,21 @@
+{
+  "name": "jpo29032025",
+  "version": "1.0.0",
+  "description": "Email template build process",
+  "main": "gulpfile.js",
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch"
+  },
+  "keywords": [],
+  "author": "Philippe",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-mjml": "^4.0.2",
+    "gulp-pug": "^5.0.0",
+    "gulp-rename": "^2.0.0"
+  }
+}
