@@ -60,6 +60,7 @@ gulp.task('minify-html', function() {
                 file.contents = Buffer.from(minified);
                 callback(null, file);
         }))
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist'));
 });
 
