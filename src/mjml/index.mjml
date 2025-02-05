@@ -1,0 +1,30 @@
+
+<mjml>
+  <mj-head>
+    <mj-title>Email Template</mj-title>
+    <mj-attributes>
+      <mj-all font-family="Arial, sans-serif"></mj-all>
+      <mj-text font-size="14px" line-height="20px"></mj-text>
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+    <mj-section background-color="#ffffff" padding="20px">
+      <mj-column>
+        <mj-text font-size="24px" font-weight="bold" align="center" color="#333333">Notre Newsletter</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#ffffff" padding="20px">
+      <mj-column width="50%">
+        <mj-text color="#333333">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</mj-text>
+      </mj-column>
+      <mj-column width="50%">
+        <mj-text color="#333333">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section background-color="#f0f0f0" padding="20px">
+      <mj-column>
+        <mj-text align="center" color="#666666" font-size="12px">© 2025 Votre Entreprise<br/>Pour vous désinscrire, cliquez ici</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

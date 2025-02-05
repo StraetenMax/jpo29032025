@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const pug = require('gulp-pug');
 const mjml = require('gulp-mjml');
+const mjml2html = require('mjml');
 const htmlmin = require('gulp-htmlmin');
 const rename = require('gulp-rename');
 const clean= require('gulp-clean');
@@ -29,25 +30,26 @@ gulp.task('pug-to-mjml', function(){
             globals: [],              // Variables globales disponibles dans tous les templates
             self: false,              // Utiliser 'self' au lieu de 'this'
         }))
-        .pipe(gulp.dest('./src/mjml/.mjml'));
+        .pipe(rename({extname: '.mjml'}))
+        .pipe(gulp.dest('./src/mjml'));
 });
 
 // Conversion MJML vers HTML
 gulp.task('mjml-to-html', function() {
     return gulp.src('./src/mjml/*.mjml')
-        .pipe(mjml({
+        .pipe(mjml(mjml2html)
             // Options MJML
-            beautify: true, // Formatage du HTML généré
-            minify: false, // Minification du HTML généré
-            validation: "strict", // Mode de validation : "strict", "soft" ou "skip"
-            fonts: {}, // Configuration des polices personnalisées
-            keepComments: true, // Conserver les commentaires
-            filePath: '', // Chemin pour les includes MJML
-            juicePreserveTags: [], // Préserver certaines balises lors de l'inlining CSS
-            minifyOptions: {}, // Options spécifiques pour la minification
-            useMjmlConfigOptions: true, // Utiliser les options du fichier .mjmlconfig
-            mjmlConfigPath: null, // Chemin vers le fichier .mjmlconfig
-}))
+            //beautify: true, // Formatage du HTML généré
+            //minify: false, // Minification du HTML généré
+            //validation: "strict", // Mode de validation : "strict", "soft" ou "skip"
+            //fonts: {}, // Configuration des polices personnalisées
+            //keepComments: false, // Conserver les commentaires
+            //filePath: '', // Chemin pour les includes MJML
+            //juicePreserveTags: [], // Préserver certaines balises lors de l'inlining CSS
+            //minifyOptions: {}, // Options spécifiques pour la minification
+            //useMjmlConfigOptions: true, // Utiliser les options du fichier .mjmlconfig
+            //mjmlConfigPath: null, // Chemin vers le fichier .mjmlconfig
+)
         .pipe(gulp.dest('./dist'));
 });
 
