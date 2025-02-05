@@ -6,13 +6,6 @@ const htmlmin = require('gulp-htmlmin');
 const rename = require('gulp-rename');
 const clean= require('gulp-clean');
 
-// Chemins de fichiers
-//const paths = {
-//    pug: './src/templates/*.pug',
-//    mjml: './src/mjml/',
-//    dist: './dist/'
-//};
-
 // Tâche de nettoyage du dossier de distribution
 gulp.task('clean', function(){
     return gulp.src('./dist', {read: false, allowEmpty: true})
@@ -54,21 +47,21 @@ gulp.task('mjml-to-html', function() {
 });
 
 // Minification HTML
-//gulp.task('minify-html', function() {
-//    return gulp.src(`${paths.dist}*.html`)
-//        .pipe(htmlmin({
-//            collapseWhitespace: true,
-//            removeComments: true,
-//            minifycss: true
-//        }))
-//        .pipe(rename({ suffix: '.min' }))
-//        .pipe(gulp.dest(paths.dist));
-//});
+gulp.task('minify-html', function() {
+    return gulp.src('./dist/*.html')
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            removeComments: true,
+            removeEmptyAttributes: true,
+            minifycss: true
+        }))
+        
+        .pipe(gulp.dest('dist'));
+});
 
 // Tâche de surveillance
 gulp.task('watch', function(){
-    gulp.watch('./src/templates/*.pug', gulp.series('pug-to-mjml', 'mjml-to-html'));
-    //gulp.watch(paths.pug, gulp.series('pug-to-mjml', 'mjml-to-html', 'minify-html'));
+    gulp.watch('./src/templates/*.pug', gulp.series('pug-to-mjml', 'mjml-to-html', 'minify-html'));
 });
 
 // Tâche par défaut
@@ -76,5 +69,5 @@ gulp.task('default', gulp.series(
     'clean',
     'pug-to-mjml',
     'mjml-to-html',
-    //'minify-html'
+    'minify-html'
 ));

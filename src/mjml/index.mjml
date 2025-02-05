@@ -4,7 +4,7 @@
     <mj-title>Email Template</mj-title>
     <mj-attributes>
       <mj-all font-family="Arial, sans-serif"></mj-all>
-      <mj-text font-size="14px" line-height="20px"></mj-text>
+      <mj-text font-size="14px" line-height="20px" font-weight="400"></mj-text>
     </mj-attributes>
   </mj-head>
   <mj-body>
