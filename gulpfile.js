@@ -2,10 +2,10 @@ const gulp = require('gulp');
 const pug = require('gulp-pug');
 const mjml = require('gulp-mjml');
 const mjml2html = require('mjml');
-const htmlmin = require('gulp-htmlmin');
+const htmlmin = require('html-minifier-terser').minify;
 const rename = require('gulp-rename');
 const clean= require('gulp-clean');
-
+const through2= require('through2');
 // Tâche de nettoyage du dossier de distribution
 gulp.task('clean', function(){
     return gulp.src('./dist', {read: false, allowEmpty: true})
@@ -49,15 +49,20 @@ gulp.task('mjml-to-html', function() {
 // Minification HTML
 gulp.task('minify-html', function() {
     return gulp.src('./dist/*.html')
-        .pipe(htmlmin({
-            collapseWhitespace: true,
-            removeComments: true,
-            removeEmptyAttributes: true,
-            minifycss: true
+        .pipe(through2.obj(async function(file, enc, callback){
+            // Minifie le contenu HTML
+                const minified = await htmlmin(String(file.contents), {
+                    collapseWhitespace: true,
+                    removeComments: true,
+                    removeEmptyAttributes: true,
+                    minifyCSS: true
+                });
+                file.contents = Buffer.from(minified);
+                callback(null, file);
         }))
-        
         .pipe(gulp.dest('dist'));
 });
+
 
 // Tâche de surveillance
 gulp.task('watch', function(){
