@@ -7,9 +7,13 @@ import rename from 'gulp-rename';
 import clean from 'gulp-clean';
 import through2 from 'through2';
 import htmlhint from 'gulp-htmlhint';
+import filesize from 'gulp-filesize';
 // Image Compression et Poids
 import imagemin from 'gulp-imagemin';
-import filesize from 'gulp-filesize';
+import gifsicle from 'imagemin-gifsicle';
+import mozjpeg from 'imagemin-mozjpeg';
+import optipng from 'imagemin-optipng';
+import svgo from 'imagemin-svgo';
 // Serveur
 import liveServer from 'live-server';
 
@@ -39,13 +43,13 @@ gulp.task('verification', function(){
 
 
 // Compression des images
-gulp.task('compress-images', function(){
+gulp.task('compressImg', function(){
     return gulp.src('./src/images/*.{png,jpg,gif}')
         .pipe(filesize({title: 'Taille des images avant compression'}))   
         .pipe(imagemin([
-            imagemin.gifsicle({interlaced: true, optimizationLevel: 3}),
-            imagemin.mozjpeg({quality: 75, progressive: true}),
-            imagemin.optipng({optimizationLevel: 5 })
+            gifsicle({ interlaced: true, optimizationLevel: 3 }),
+            mozjpeg({ quality: 75, progressive: true }),
+            optipng({ optimizationLevel: 5 })
         ]))
         .pipe(filesize({title: 'Taille des images après compression'}))
         .pipe(gulp.dest('./dist/images'));
@@ -77,7 +81,7 @@ gulp.task('pug-to-mjml', function(){
 gulp.task('mjml-to-html', function() {
     return gulp.src('./src/mjml/*.mjml')
         .pipe(mjml(mjml2html, {
-            beautify: true,
+            beautify: false,
             minify: false,
             validationLevel: 'strict', //soft skip
             fonts: {},
@@ -85,7 +89,7 @@ gulp.task('mjml-to-html', function() {
             ignoreIncludes: true,
             preprocessors: [],
             useMjmlConfigOptions: false, // Utiliser les options du fichier .mjmlconfig
-}))
+        }))
         .pipe(gulp.dest('./dist'));
 });
 
@@ -107,7 +111,6 @@ gulp.task('minify-html', function() {
         .pipe(gulp.dest('dist'));
 });
 
-
 // Tâche de surveillance
 gulp.task('watch', function(){
     gulp.watch('./src/templates/*.pug', gulp.series('pug-to-mjml', 'mjml-to-html', 'minify-html', 'serve'));
@@ -119,5 +122,5 @@ gulp.task('default', gulp.series(
     'pug-to-mjml',
     'mjml-to-html',
     'minify-html',
-    'serve'
+    'verification'
 ));

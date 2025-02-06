@@ -6,7 +6,7 @@
   "scripts": {
     "build": "gulp",
     "dev": "gulp watch",
-    "image": "gulp compress-images",
+    "image": "gulp compressImg",
     "verification": "gulp verification"
   },
   "keywords": [],
@@ -23,6 +23,10 @@
     "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "html-minifier-terser": "^7.2.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^11.0.1",
     "live-server": "^1.2.2",
     "mjml": "^4.14.1",
     "through2": "^4.0.2"
