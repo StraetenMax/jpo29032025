@@ -5,7 +5,9 @@
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp",
-    "watch": "gulp watch"
+    "dev": "gulp watch",
+    "image": "gulp compress-images",
+    "verification": "gulp verification"
   },
   "keywords": [],
   "author": "Philippe",
@@ -14,6 +16,7 @@
     "gulp": "^5.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-filesize": "^0.0.6",
+    "gulp-htmlhint": "^4.0.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^9.1.0",
     "gulp-mjml": "^4.0.2",

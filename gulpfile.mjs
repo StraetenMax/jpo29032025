@@ -1,16 +1,17 @@
-const gulp = require('gulp');
-const pug = require('gulp-pug');
-const mjml = require('gulp-mjml');
-const mjml2html = require('mjml');
-const htmlmin = require('html-minifier-terser').minify;
-const rename = require('gulp-rename');
-const clean = require('gulp-clean');
-const through2 = require('through2');
+import gulp from 'gulp';
+import pug from 'gulp-pug';
+import mjml from 'gulp-mjml';
+import mjml2html from 'mjml';
+import { minify as htmlmin } from 'html-minifier-terser';
+import rename from 'gulp-rename';
+import clean from 'gulp-clean';
+import through2 from 'through2';
+import htmlhint from 'gulp-htmlhint';
 // Image Compression et Poids
-const imagemin = require('gulp-imagemin');
-const filesize = require('gulp-filesize');
+import imagemin from 'gulp-imagemin';
+import filesize from 'gulp-filesize';
 // Serveur
-const liveServer = require('live-server');
+import liveServer from 'live-server';
 
 // Tâche pour démarrer le serveur Live Server
 gulp.task('serve', (done) => {
@@ -25,10 +26,21 @@ gulp.task('serve', (done) => {
     done();
 });
 
+//Vérification du poids des fichiers Html et des balises alt
+gulp.task('verification', function(){
+    return gulp.src('dist/*.html')
+    .pipe(htmlhint({
+        "alt-require": true // Exige que toutes les balises <img> aient un attribut alt
+    }))
+    .pipe(htmlhint.reporter())
+    .pipe(filesize())
+    .pipe(gulp.dest('./dist'))
+})
+
 
 // Compression des images
 gulp.task('compress-images', function(){
-    return gulp.src('src/images/*.{png,jpg,gif}')
+    return gulp.src('./src/images/*.{png,jpg,gif}')
         .pipe(filesize({title: 'Taille des images avant compression'}))   
         .pipe(imagemin([
             imagemin.gifsicle({interlaced: true, optimizationLevel: 3}),
@@ -36,7 +48,7 @@ gulp.task('compress-images', function(){
             imagemin.optipng({optimizationLevel: 5 })
         ]))
         .pipe(filesize({title: 'Taille des images après compression'}))
-        .pipe(gulp.dest('dist/images'));
+        .pipe(gulp.dest('./dist/images'));
 });
 
 
@@ -65,8 +77,14 @@ gulp.task('pug-to-mjml', function(){
 gulp.task('mjml-to-html', function() {
     return gulp.src('./src/mjml/*.mjml')
         .pipe(mjml(mjml2html, {
-            useMjmlConfigOptions: true, // Utiliser les options du fichier .mjmlconfig
-            mjmlConfigPath: './.mjmlconfig', // Chemin vers le fichier .mjmlconfig
+            beautify: true,
+            minify: false,
+            validationLevel: 'strict', //soft skip
+            fonts: {},
+            keepComments: false,
+            ignoreIncludes: true,
+            preprocessors: [],
+            useMjmlConfigOptions: false, // Utiliser les options du fichier .mjmlconfig
 }))
         .pipe(gulp.dest('./dist'));
 });
