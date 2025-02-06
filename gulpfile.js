@@ -4,18 +4,38 @@ const mjml = require('gulp-mjml');
 const mjml2html = require('mjml');
 const htmlmin = require('html-minifier-terser').minify;
 const rename = require('gulp-rename');
-const clean= require('gulp-clean');
-const through2= require('through2');
-const imagemin= require('gulp-imagemin');
+const clean = require('gulp-clean');
+const through2 = require('through2');
+// Image Compression et Poids
+const imagemin = require('gulp-imagemin');
+const filesize = require('gulp-filesize');
+// Serveur
+const liveServer = require('live-server');
+
+// Tâche pour démarrer le serveur Live Server
+gulp.task('serve', (done) => {
+    const params ={
+        port: 8080, // Choisissez un port
+        root: 'dist',
+        open: true,
+        file:'index.html',
+        wait: 500
+    };
+    liveServer.start(params);
+    done();
+});
+
 
 // Compression des images
 gulp.task('compress-images', function(){
     return gulp.src('src/images/*.{png,jpg,gif}')
+        .pipe(filesize({title: 'Taille des images avant compression'}))   
         .pipe(imagemin([
             imagemin.gifsicle({interlaced: true, optimizationLevel: 3}),
             imagemin.mozjpeg({quality: 75, progressive: true}),
             imagemin.optipng({optimizationLevel: 5 })
         ]))
+        .pipe(filesize({title: 'Taille des images après compression'}))
         .pipe(gulp.dest('dist/images'));
 });
 
@@ -44,19 +64,10 @@ gulp.task('pug-to-mjml', function(){
 // Conversion MJML vers HTML
 gulp.task('mjml-to-html', function() {
     return gulp.src('./src/mjml/*.mjml')
-        .pipe(mjml(mjml2html)
-            // Options MJML
-            //beautify: true, // Formatage du HTML généré
-            //minify: false, // Minification du HTML généré
-            //validation: "strict", // Mode de validation : "strict", "soft" ou "skip"
-            //fonts: {}, // Configuration des polices personnalisées
-            //keepComments: false, // Conserver les commentaires
-            //filePath: '', // Chemin pour les includes MJML
-            //juicePreserveTags: [], // Préserver certaines balises lors de l'inlining CSS
-            //minifyOptions: {}, // Options spécifiques pour la minification
-            //useMjmlConfigOptions: true, // Utiliser les options du fichier .mjmlconfig
-            //mjmlConfigPath: null, // Chemin vers le fichier .mjmlconfig
-)
+        .pipe(mjml(mjml2html, {
+            useMjmlConfigOptions: true, // Utiliser les options du fichier .mjmlconfig
+            mjmlConfigPath: './.mjmlconfig', // Chemin vers le fichier .mjmlconfig
+}))
         .pipe(gulp.dest('./dist'));
 });
 
@@ -81,7 +92,7 @@ gulp.task('minify-html', function() {
 
 // Tâche de surveillance
 gulp.task('watch', function(){
-    gulp.watch('./src/templates/*.pug', gulp.series('pug-to-mjml', 'mjml-to-html', 'minify-html'));
+    gulp.watch('./src/templates/*.pug', gulp.series('pug-to-mjml', 'mjml-to-html', 'minify-html', 'serve'));
 });
 
 // Tâche par défaut
@@ -89,5 +100,6 @@ gulp.task('default', gulp.series(
     'clean',
     'pug-to-mjml',
     'mjml-to-html',
-    'minify-html'
+    'minify-html',
+    'serve'
 ));

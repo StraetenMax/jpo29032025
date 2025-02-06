@@ -1,0 +1,10 @@
+{
+  "beautify": true,
+  "minify": false,
+  "validationLevel": "strict",
+  "_comment": "strict, soft et skip",
+  "fonts": {},
+  "keepComments": false,
+  "ignoreIncludes": true,
+  "preprocessors": []
+}
