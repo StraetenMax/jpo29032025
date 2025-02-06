@@ -19,6 +19,7 @@
     "gulp-pug": "^5.0.0",
     "gulp-rename": "^2.0.0",
     "html-minifier-terser": "^7.2.0",
+    "live-server": "^1.2.2",
     "mjml": "^4.14.1",
     "through2": "^4.0.2"
   }
