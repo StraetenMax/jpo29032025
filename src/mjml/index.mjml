@@ -56,6 +56,11 @@
     </mj-style>
   </mj-head>
   <mj-body background-color="#f2f2f2" width="650px">
+    <mj-section>
+      <mj-column>
+        <mj-text align="center"><a style="color:#626262;font-size:10px;font-weight:500;line-height:12px" href="{{ mirror}}">Voir la version en ligne</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a style="color:#626262;font-size:10px;font-weight:500;line-height:12px;" href="{{ unsubscribe }}">Se désinscrire de la liste de diffusion</a></mj-text>
+      </mj-column>
+    </mj-section>
     <mj-section background-color="#e6e6e6" padding="20px 32px">
       <mj-column width="320px">
         <mj-image width="140px" padding="0" border="none" align="center" target="_blank" src="https://i.ibb.co/F0kfF0m/ECOSUPCAMPUS012024.png" href="https://ecosup-campus.com" alt="Logo Ecosup Campus"/>

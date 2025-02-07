@@ -1,126 +1,129 @@
 import gulp from 'gulp';
 import pug from 'gulp-pug';
-import filter from 'gulp-filter';
+import filter from 'gulp-filter'
 import mjml from 'gulp-mjml';
+import mjml2html from 'mjml';
 import { minify as htmlmin } from 'html-minifier-terser';
 import rename from 'gulp-rename';
 import clean from 'gulp-clean';
 import through2 from 'through2';
 import htmlhint from 'gulp-htmlhint';
 import filesize from 'gulp-filesize';
+// Image Compression et Poids
 import imagemin from 'gulp-imagemin';
 import gifsicle from 'imagemin-gifsicle';
 import mozjpeg from 'imagemin-mozjpeg';
 import optipng from 'imagemin-optipng';
-import imageminSvgo from 'imagemin-svgo'; // Importation spécifique pour svgo
+// Serveur
 import liveServer from 'live-server';
 
-// Serveur
-const serve = (done) => {
-    const params = {
-        port: 8080,
+// Tâche pour démarrer le serveur Live Server
+gulp.task('serve', (done) => {
+    const params ={
+        port: 8080, // Choisissez un port
         root: 'dist',
         open: true,
-        file: 'index.html',
+        file:'index.html',
         wait: 500
     };
     liveServer.start(params);
     done();
-};
+});
 
-// Vérification du poids et des attributs alt
-const verification = () => {
+//Vérification du poids des fichiers Html et des balises alt
+gulp.task('verification', function(){
     return gulp.src('dist/*.html')
-        .pipe(htmlhint({ "alt-require": true }))
-        .pipe(htmlhint.reporter())
-        .pipe(filesize()); // Filesize après minification
-};
+    .pipe(htmlhint({
+        "alt-require": true // Exige que toutes les balises <img> aient un attribut alt
+    }))
+    .pipe(htmlhint.reporter())
+    .pipe(filesize())
+    .pipe(gulp.dest('./dist'))
+})
+
 
 // Compression des images
-const compressImg = () => {
-    return gulp.src('./src/images/*.{png,jpg,gif,svg}')
-        .pipe(filesize({ title: 'Taille des images avant compression' }))
+gulp.task('compressImg', function(){
+    return gulp.src('./src/images/*.{png,jpg,gif}')
+        .pipe(filesize({title: 'Taille des images avant compression'}))   
         .pipe(imagemin([
             gifsicle({ interlaced: true, optimizationLevel: 3 }),
             mozjpeg({ quality: 75, progressive: true }),
-            optipng({ optimizationLevel: 5 }),
-            imageminSvgo() // Utilisation de l'importation spécifique
+            optipng({ optimizationLevel: 5 })
         ]))
-        .pipe(filesize({ title: 'Taille des images après compression' }))
+        .pipe(filesize({title: 'Taille des images après compression'}))
         .pipe(gulp.dest('./dist/images'));
-};
+});
 
-// Nettoyage
-const cleanDist = () => {
-    return gulp.src('dist', { allowEmpty: true, read: false })
+
+// Tâche de nettoyage du dossier de distribution
+gulp.task('clean', function(){
+    return gulp.src('./dist', {allowEmpty: true, read: false})
         .pipe(clean());
-};
+}); 
 
-// Pug vers Mjml
-const pugToMjml = () => {
-    return gulp.src('./src/templates/*.pug')
+// Conversion Pug vers Mjml
+gulp.task('pug-to-mjml', function(){
+    const pugFiles = filter(['**/*.pug', '!**/_*.pug']);
+    return gulp.src('./src/*.pug')
+        .pipe(pugFiles)
         .pipe(pug({
-            pretty: true, // À retirer pour la production
-            debug: true, // À retirer pour la production
-            compileDebug: false,
-            globals: [],
-            self: false,
+            // Options de compilation
+            pretty: true, //Garder une mise en forme lisible pendant le développement
+            debug: true,             // Activer le mode debug
+            compileDebug: false,      // Ajouter du code de débogage à la fonction compilée
+            globals: [],              // Variables globales disponibles dans tous les templates
+            self: false,              // Utiliser 'self' au lieu de 'this'
         }))
-        .pipe(rename({ extname: '.mjml' }))
+        .pipe(rename({extname: '.mjml'}))
         .pipe(gulp.dest('./src/mjml'));
-};
+});
 
-// Mjml vers HTML
-const mjmlToHtml = () => {
+// Conversion MJML vers HTML
+gulp.task('mjml-to-html', function() {
     return gulp.src('./src/mjml/*.mjml')
-        .pipe(mjml({ // Utilisation de mjml directement
-            beautify: false, // false en production
-            minify: false, // Minification faite après
-            validationLevel: 'strict',
+        .pipe(mjml(mjml2html, {
+            beautify: false,
+            minify: false,
+            validationLevel: 'strict', //soft skip
             fonts: {},
             keepComments: false,
             ignoreIncludes: true,
             preprocessors: [],
-            useMjmlConfigOptions: false,
+            useMjmlConfigOptions: false, // Utiliser les options du fichier .mjmlconfig
         }))
         .pipe(gulp.dest('./dist'));
-};
+});
 
 // Minification HTML
-const minifyHtml = () => {
+gulp.task('minify-html', function() {
     return gulp.src('./dist/*.html')
-        .pipe(through2.obj(async function (file, enc, callback) {
-            const minified = await htmlmin(String(file.contents), {
-                collapseWhitespace: true,
-                removeComments: true,
-                removeEmptyAttributes: true,
-                minifyCSS: true,
-                minifyJS: true // Ajout de la minification du JS
-            });
-            file.contents = Buffer.from(minified);
-            callback(null, file);
+        .pipe(through2.obj(async function(file, enc, callback){
+            // Minifie le contenu HTML
+                const minified = await htmlmin(String(file.contents), {
+                    collapseWhitespace: true,
+                    removeComments: true,
+                    removeEmptyAttributes: true,
+                    minifyCSS: true
+                });
+                file.contents = Buffer.from(minified);
+                callback(null, file);
         }))
-        .pipe(rename({ suffix: '.min' }))
+        .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('dist'));
-};
+});
 
-// Watch
-const watch = () => {
-    gulp.watch('./src/templates/*.pug', gulp.series(pugToMjml, mjmlToHtml, minifyHtml, verification, serve));
-    gulp.watch('./src/images/**/*', gulp.series(compressImg));
-};
+// Tâche de surveillance
+gulp.task('watch', function(){
+    gulp.watch('./src/*.pug', gulp.series('pug-to-mjml', 'mjml-to-html', 'minify-html', 'serve'));
+});
 
 // Tâche par défaut
-const defaultTask = gulp.series(
-    cleanDist,
-    compressImg,
-    pugToMjml,
-    mjmlToHtml,
-    minifyHtml,
-    verification,
-    serve,
-    watch
-);
-
-// Export des tâches
-export { serve, verification, compressImg, cleanDist, pugToMjml, mjmlToHtml, minifyHtml, watch, defaultTask as default };
+gulp.task('default', gulp.series(
+    'clean',
+    'pug-to-mjml',
+    'mjml-to-html',
+    'minify-html',
+    'verification',
+    'serve'
+));
