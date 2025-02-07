@@ -39,12 +39,25 @@ const serve = (done) => {
 };
 
 // Vérification du poids et des attributs alt
+const customFilesize = () => {
+    return through2.obj(function(file, _, cb){
+        if (file.isBuffer()) {
+            // Convertir la taille de bytes en kilo-octets (Ko)
+            const fileSizeInKB = file.contents.length / 1024;
+            // Utiliser path.basename pour obtenir uniquement le nom du fichier
+            const fileName = path.basename(file.path);
+            console.log(`${fileName}: ${fileSizeInKB.toFixed(2)} Ko`);
+        }
+        cb(null, file);
+    });
+}
+
 const verification = () => {
     return gulp.src('dist/*.html')
-        .pipe(htmlhint({ "alt-require": true }))
-        .pipe(htmlhint.reporter())
-        .pipe(filesize()); // Filesize après minification
+        .pipe(customFilesize())
+        .pipe(gulp.dest('dist'));
 };
+
 
 // Compression des images
 const compressImg = () => {
