@@ -12,17 +12,29 @@ import gifsicle from 'imagemin-gifsicle';
 import mozjpeg from 'imagemin-mozjpeg';
 import optipng from 'imagemin-optipng';
 import liveServer from 'live-server';
+import path, { dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+// Définit --dirname
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // Serveur
 const serve = (done) => {
     const params = {
         port: 8080,
-        root: 'dist',
+        root: path.resolve(__dirname, './dist'),
         open: true,
         file: 'index.html',
-        wait: 500
+        wait: 500,
+        logLevel: 2, //Niveau de journalisation (0 = désactivé, 1 = erreurs, 2 = infos, 3 = debogage )
     };
-    liveServer.start(params);
+    try {
+        liveServer.start(params);
+        console.log('Live Server started on port', params.port);
+    } catch (error){
+        console.error('Error starting Live Server:', error);
+    }
     done();
 };
 
@@ -57,8 +69,8 @@ const cleanDist = () => {
 const pugToMjml = () => {
     return gulp.src('./src/*.pug')
         .pipe(pug({
-            pretty: true, // À retirer pour la production
-            debug: true, // À retirer pour la production
+            pretty: false, // À retirer pour la production
+            debug: false, // À retirer pour la production
             compileDebug: false,
             globals: [],
             self: false,
@@ -75,7 +87,7 @@ const mjmlToHtml = () => {
         const result = mjml(file.contents.toString(), {
             beautify: false, // false en production
             minify: false, // Minification faite après
-            validationLevel: 'strict',
+            validationLevel: 'strict', //'soft', 'skip'
             fonts: {},
             keepComments: false,
             ignoreIncludes: true,
@@ -90,6 +102,7 @@ const mjmlToHtml = () => {
         cb(error);
     }
     }))
+        .pipe(rename({ extname: '.html' }))
         .pipe(gulp.dest('./dist'));
 };
 
@@ -110,9 +123,11 @@ const minifyHtml = () => {
         .pipe(gulp.dest('dist'));
 };
 
+//Serve
+
 // Watch
 const watch = () => {
-    gulp.watch('./src/*.pug', gulp.series(pugToMjml, mjmlToHtml, minifyHtml, verification, serve));
+    gulp.watch('./src/**/*.pug', gulp.series(pugToMjml, mjmlToHtml, minifyHtml, verification,));
     gulp.watch('./src/images/**/*', gulp.series(compressImg));
 };
 
