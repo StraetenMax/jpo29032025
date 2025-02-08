@@ -1,0 +1,15 @@
+{
+  miniOptions: {
+      collapseWhitespace: true,
+      removeComments: false, // On garde false pour les commentaires conditionnels
+      removeEmptyAttributes: true,
+      minifyCSS: true,
+      conservativeCollapse: false, // Changé à false pour minifier plus agressivement
+      preserveLineBreaks: false, // Changé à false pour supprimer les sauts de ligne
+      processConditionalComments: true, // Changé à true pour traiter les commentaires conditionnels
+      minifyJS: true,
+      caseSensitive: true, // Important pour les éléments MSO
+      keepClosingSlash: true, // Important pour la compatibilité email
+      html5: false // Important pour la compatibilité email
+  }
+}
