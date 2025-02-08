@@ -1,11 +1,12 @@
 import gulp from 'gulp';
 import pug from 'gulp-pug';
+import JSON5 from 'json5';
 import mjml from 'mjml';
 import { minify as htmlmin } from 'html-minifier-terser';
 import rename from 'gulp-rename';
 import clean from 'gulp-clean';
 import through2 from 'through2';
-import htmlhint from 'gulp-htmlhint';
+//-import htmlhint from 'gulp-htmlhint';
 import filesize from 'gulp-filesize';
 import imagemin from 'gulp-imagemin';
 import gifsicle from 'imagemin-gifsicle';
@@ -15,7 +16,7 @@ import liveServer from 'live-server';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { promises as fs } from 'fs'; // Ajouté pour lire le fichier JSON
-import { mkdir } from 'fs/promises'; // Pour créer des répertoires
+//-import { mkdir } from 'fs/promises'; // Pour créer des répertoires
 
 // Définit --dirname
 const __filename = fileURLToPath(import.meta.url);
@@ -24,7 +25,7 @@ const __dirname = dirname(__filename);
 // Lire le fichier de configuration
 const loadConfig = async () => {
     try {
-        const config = JSON.parse(await fs.readFile('.mjmlConfig.json', 'utf8'));
+        const config = JSON5.parse(await fs.readFile('.mjmlConfig.json5', 'utf8'));
         return config;
     } catch (error) {
         console.error('Error loading config:', error);
@@ -43,9 +44,6 @@ const ensureDistDirectory = async () => {
         console.error('Error creating directory "dist":', error);
     }
 };
-
-
-
 
 // Serveur
 const serve = (done) => {

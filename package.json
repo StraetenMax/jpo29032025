@@ -28,6 +28,7 @@
     "imagemin-mozjpeg": "^7.0.0",
     "imagemin-optipng": "^5.2.1",
     "imagemin-svgo": "^11.0.1",
+    "json5": "^2.2.3",
     "live-server": "^1.2.0",
     "mjml": "^4.7.1",
     "through2": "^4.0.2"
