@@ -1,0 +1,12 @@
+{
+    "mjmlOptions": {
+      "beautify": false,
+      "minify": false,
+      "validationLevel": "strict",
+      "fonts": {},
+      "keepComments": false,
+      "ignoreIncludes": true,
+      "preprocessors": [],
+      "useMjmlConfigOptions": false
+    }
+}

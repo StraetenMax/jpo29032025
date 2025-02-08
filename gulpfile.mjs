@@ -14,10 +14,38 @@ import optipng from 'imagemin-optipng';
 import liveServer from 'live-server';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { promises as fs } from 'fs'; // Ajouté pour lire le fichier JSON
+import { mkdir } from 'fs/promises'; // Pour créer des répertoires
 
 // Définit --dirname
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// Lire le fichier de configuration
+const loadConfig = async () => {
+    try {
+        const config = JSON.parse(await fs.readFile('.mjmlConfig.json', 'utf8'));
+        return config;
+    } catch (error) {
+        console.error('Error loading config:', error);
+        return {
+            mjmlOptions: {} // Configuration par défaut
+        };
+    }
+};
+
+// Assurez-vous que le répertoire 'dist' existe
+const ensureDistDirectory = async () => {
+    try {
+        await fs.mkdir('./dist', { recursive: true });
+        console.log('Directory "dist" created or already exists.');
+    } catch (error) {
+        console.error('Error creating directory "dist":', error);
+    }
+};
+
+
+
 
 // Serveur
 const serve = (done) => {
@@ -37,27 +65,6 @@ const serve = (done) => {
     }
     done();
 };
-
-// Vérification du poids et des attributs alt
-const customFilesize = () => {
-    return through2.obj(function(file, _, cb){
-        if (file.isBuffer()) {
-            // Convertir la taille de bytes en kilo-octets (Ko)
-            const fileSizeInKB = file.contents.length / 1024;
-            // Utiliser path.basename pour obtenir uniquement le nom du fichier
-            const fileName = path.basename(file.path);
-            console.log(`${fileName}: ${fileSizeInKB.toFixed(2)} Ko`);
-        }
-        cb(null, file);
-    });
-}
-
-const verification = () => {
-    return gulp.src('dist/*.html')
-        .pipe(customFilesize())
-        .pipe(gulp.dest('dist'));
-};
-
 
 // Compression des images
 const compressImg = () => {
@@ -82,7 +89,7 @@ const cleanDist = () => {
 const pugToMjml = () => {
     return gulp.src('./src/*.pug')
         .pipe(pug({
-            pretty: false, // À retirer pour la production
+            pretty: true, // À retirer pour la production
             debug: false, // À retirer pour la production
             compileDebug: false,
             globals: [],
@@ -93,67 +100,126 @@ const pugToMjml = () => {
 };
 
 // Mjml vers HTML
-const mjmlToHtml = () => {
+const mjmlToHtml = async () => {
+    const config = await loadConfig();
     return gulp.src('./src/mjml/*.mjml')
-    .pipe(through2.obj((file, _, cb) => {
-    try{
-        const result = mjml(file.contents.toString(), {
-            beautify: false, // false en production
-            minify: false, // Minification faite après
-            validationLevel: 'strict', //'soft', 'skip'
-            fonts: {},
-            keepComments: false,
-            ignoreIncludes: true,
-            preprocessors: [],
-            useMjmlConfigOptions: false,
-        });
-        file.contents = Buffer.from(result.html);
-        cb(null, file);
-    } catch (error) {
-        console.error('Erreur dans le fichier:', file.path);
-        console.error(error.message);
-        cb(error);
-    }
-    }))
+        .pipe(through2.obj((file, _, cb) => {
+            try {
+                const mjmlContent = file.contents.toString();
+                const result = mjml(mjmlContent, {
+                    ...config.mjmlOptions,
+                    filePath: file.path // Ajout du chemin du fichier pour les imports relatifs
+                });
+                
+                if (result.errors && result.errors.length) {
+                    console.error('MJML Errors:', result.errors);
+                    return cb(new Error('MJML compilation failed'));
+                }
+                
+                file.contents = Buffer.from(result.html);
+                cb(null, file);
+            } catch (error) {
+                console.error('Erreur dans le fichier:', file.path);
+                console.error(error.message);
+                cb(error);
+            }
+        }))
         .pipe(rename({ extname: '.html' }))
         .pipe(gulp.dest('./dist'));
 };
 
-// Minification HTML
+// Minification HTML----------------------------------------------------------------------------------------------------------------------
 const minifyHtml = () => {
-    return gulp.src('./dist/*.html')
-        .pipe(through2.obj(async function (file, enc, callback) {
-            const minified = await htmlmin(String(file.contents), {
-                collapseWhitespace: true,
-                removeComments: true,
-                removeEmptyAttributes: true,
-                minifyCSS: true,
-            });
-            file.contents = Buffer.from(minified);
-            callback(null, file);
-        }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('dist'));
+    return new Promise((resolve) => {
+        // Petit délai pour s'assurer que les fichiers sont bien créés
+        setTimeout(() => {
+            console.log('Starting minifyHtml task...');
+            gulp.src('./dist/*.html')
+                .pipe(through2.obj(async (file, enc, callback) => {
+                    if (file.isBuffer()) {
+                        try {
+                            const minified = await htmlmin(String(file.contents), {
+                                collapseWhitespace: true,
+                                removeComments: false, // On garde false pour les commentaires conditionnels
+                                removeEmptyAttributes: true,
+                                minifyCSS: true,
+                                conservativeCollapse: false, // Changé à false pour minifier plus agressivement
+                                preserveLineBreaks: false, // Changé à false pour supprimer les sauts de ligne
+                                processConditionalComments: true, // Changé à true pour traiter les commentaires conditionnels
+                                minifyJS: true,
+                                caseSensitive: true, // Important pour les éléments MSO
+                                keepClosingSlash: true, // Important pour la compatibilité email
+                                html5: false // Important pour la compatibilité email
+                            });
+                            file.contents = Buffer.from(minified);
+                            console.log(`Minified file: ${file.path}`);
+                        } catch (error) {
+                            console.error(`Error minifying file: ${file.path}`, error);
+                        }
+                    } else {
+                        console.warn(`File is not a buffer: ${file.path}`);
+                    }
+                    callback(null, file);
+                }))
+                .pipe(rename({ suffix: '.min' }))
+                .pipe(gulp.dest('dist'))
+                .on('end', () => {
+                    console.log('minifyHtml task completed.');
+                    resolve();
+                });
+        }, 500); // Délai de 500ms
+    });
 };
 
-//Serve
+// Vérification du poids et des attributs alt--------------------------------------------------------------------------------
+const customFilesize = () => {
+    return through2.obj(function (file, _, cb) {
+        if (file.isBuffer()) {
+            const fileSizeInKB = file.contents.length / 1024;
+            const fileName = path.basename(file.path);
+            console.log(`${fileName}: ${fileSizeInKB.toFixed(2)} Ko`);
+        } else {
+            console.warn(`File is not a buffer: ${file.path}`);
+        }
+        cb(null, file);
+    });
+};
 
-// Watch
+const verification = () => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            console.log('Starting verification task...');
+            gulp.src('dist/*.html')
+                .pipe(customFilesize())
+                .pipe(gulp.dest('dist'))
+                .on('end', () => {
+                    console.log('verification task completed.');
+                    resolve();
+                });
+        }, 500); // Délai de 500ms
+    });
+};
+
+
+
+// Watch ------------------------------------------------------------------------------------------------------------------------------
 const watch = () => {
     gulp.watch('./src/**/*.pug', gulp.series(pugToMjml, mjmlToHtml, minifyHtml, verification,));
     gulp.watch('./src/images/**/*', gulp.series(compressImg));
 };
 
-// Tâche par défaut
+// Tâche par défaut---------------------------------------------------------------------------------------------------------------------
 const defaultTask = gulp.series(
     cleanDist,
-    compressImg,
+    ensureDistDirectory, // Ajoutez cette tâche ici
+    gulp.parallel(compressImg),
     pugToMjml,
-    mjmlToHtml,
-    minifyHtml,
-    verification,
-    serve,
-    watch
+    mjmlToHtml, // Appeler mjmlToHtml comme une fonction asynchrone
+    (done) => {
+        setTimeout(() => {
+            gulp.series(minifyHtml, verification, serve, watch)(done);
+        }, 500);
+    }
 );
 
 // Export des tâches
