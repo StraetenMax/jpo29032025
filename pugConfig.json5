@@ -1,9 +1,24 @@
 {
-    pugOptions: {
-      pretty: true, // À retirer pour la production
-      debug: false, // À retirer pour la production
-      compileDebug: false,
-      globals: [],
-      self: false,
+  // Options de compilation Pug
+  pugConfig: {
+    // Formatage de sortie
+    pretty: true,  // true pour le développement, false pour la production
+    
+    // Options de débogage
+    debug: false,  // Désactive les informations de débogage
+    compileDebug: false,  // Désactive le code de débogage dans la sortie compilée
+    
+    // Options de compilation
+    self: false,  // N'utilise pas 'self' pour les variables
+    cache: false,  // Désactive la mise en cache des templates
+    
+    // Variables globales (si nécessaire)
+    globals: [],
+    
+    // Options locals (si vous avez des données à passer)
+    locals: {
+      // Vous pouvez ajouter des variables ici
+      // exemple: title: "Mon Email"
     }
+  }
 }

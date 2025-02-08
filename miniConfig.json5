@@ -1,15 +1,16 @@
 {
-  miniOptions: {
-      collapseWhitespace: true,
-      removeComments: false, // On garde false pour les commentaires conditionnels
-      removeEmptyAttributes: true,
-      minifyCSS: true,
-      conservativeCollapse: false, // Changé à false pour minifier plus agressivement
-      preserveLineBreaks: false, // Changé à false pour supprimer les sauts de ligne
-      processConditionalComments: true, // Changé à true pour traiter les commentaires conditionnels
-      minifyJS: true,
-      caseSensitive: true, // Important pour les éléments MSO
-      keepClosingSlash: true, // Important pour la compatibilité email
-      html5: false // Important pour la compatibilité email
+  // Configuration pour la minification HTML
+  miniConfig: {
+    collapseWhitespace: true, // Supprimer les espaces blancs
+    removeComments: false, // Garder les commentaires conditionnels
+    removeEmptyAttributes: true, // Supprimer les attributs vides
+    minifyCSS: true, // Minifier le CSS
+    conservativeCollapse: false, // Minifier plus agressivement
+    preserveLineBreaks: false, // Supprimer les sauts de ligne
+    processConditionalComments: true, // Traiter les commentaires conditionnels
+    minifyJS: true, // Minifier le JavaScript
+    caseSensitive: true, // Important pour les éléments MSO
+    keepClosingSlash: true, // Important pour la compatibilité email
+    html5: false // Important pour la compatibilité email
   }
 }
