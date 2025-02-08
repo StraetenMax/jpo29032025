@@ -13,6 +13,7 @@
   "author": "Philippe",
   "license": "ISC",
   "devDependencies": {
+    "cheerio": "^1.0.0",
     "gulp": "^5.0.0",
     "gulp-clean": "^0.4.0",
     "gulp-filesize": "^0.0.1",

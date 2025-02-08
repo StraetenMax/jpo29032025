@@ -1,9 +1,8 @@
 {
-    // Configuration pour MJML
   mjmlOptions: {
     beautify: false, // Ne pas embellir le HTML généré
     minify: false,   // Ne pas minifier le HTML
-    validationLevel: 'strict', // Niveau de validation strict
+    validationLevel: 'strict', //'soft', 'skip' Niveau de validation strict
     fonts: {}, // Configuration des polices
     keepComments: false, // Ne pas conserver les commentaires
     ignoreIncludes: true, // Ignorer les inclusions

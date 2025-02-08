@@ -7,6 +7,7 @@ import rename from 'gulp-rename';
 import clean from 'gulp-clean';
 import through2 from 'through2';
 //-import htmlhint from 'gulp-htmlhint';
+import { load } from 'cheerio';
 import filesize from 'gulp-filesize';
 import imagemin from 'gulp-imagemin';
 import gifsicle from 'imagemin-gifsicle';
@@ -34,6 +35,18 @@ const loadConfig = async () => {
         };
     }
 };
+
+// Tâche pour supprimer les attributs style
+const removeEmptyStyles = () => {
+    return through2.obj((file, _, cb) => {
+      if (file.isBuffer()) {
+        const $ = load(file.contents.toString());
+        $('[style=""]').removeAttr('style'); // Supprimer les attributs style vides
+        file.contents = Buffer.from($.html());
+      }
+      cb(null, file);
+    });
+  };
 
 // Assurez-vous que le répertoire 'dist' existe
 const ensureDistDirectory = async () => {
@@ -123,6 +136,7 @@ const mjmlToHtml = async () => {
             }
         }))
         .pipe(rename({ extname: '.html' }))
+        .pipe(removeEmptyStyles())
         .pipe(gulp.dest('./dist'));
 };
 
