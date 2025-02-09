@@ -144,7 +144,7 @@ const minifyHtml = () => {
         // Petit délai pour s'assurer que les fichiers sont bien créés
         setTimeout(() => {
             console.log('Starting minifyHtml task...');
-            gulp.src('./dist/*.html')
+            gulp.src(['./dist/*.html', '!./dist/*.min.html'])
                 .pipe(through2.obj(async (file, enc, callback) => {
                     if (file.isBuffer()) {
                         try {
