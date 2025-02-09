@@ -26,10 +26,8 @@ const __dirname = dirname(__filename);
 // Fonction asynchrone pour charger les configurations JSON5
 const loadConfigs = async () => {
   try {
-    const pugConfig = JSON5.parse(await fs.readFile('pugConfig.json5', 'utf8'));
     const mjmlConfig = JSON5.parse(await fs.readFile('.mjmlConfig.json5', 'utf8'));
-    const miniConfig = JSON5.parse(await fs.readFile('miniConfig.json5', 'utf8'));
-    return { pugConfig, mjmlConfig, miniConfig };
+    return { mjmlConfig };
   } catch (error) {
     console.error('Error loading configs:', error);
     throw new Error('Failed to load configurations');
@@ -164,7 +162,7 @@ const minifyHtml = () => {
                                 html5: false // Important pour la compatibilité email
                             });
                             file.contents = Buffer.from(minified);
-                            console.log(`Minified file: ${file.path}`);
+                            //console.log(`Minified file: ${file.path}`);
                         } catch (error) {
                             console.error(`Error minifying file: ${file.path}`, error);
                         }
