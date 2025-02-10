@@ -27,7 +27,7 @@ const __dirname = dirname(__filename);
 const loadConfigs = async () => {
   try {
     //const dataHotellerie = JSON5.parse(await fs.readFileSync(path.join(__dirname, './src/includes/hotellerie/dataHotellerie.json5'), 'utf8'));
-    const dataHotellerie = JSON5.parse(await fs.readFileSync(filePath, 'utf8'));
+    const dataHotellerie = JSON5.parse(await fs.readFile('./src/includes/hotellerie/dataHotellerie.json5', 'utf8'));
     const mjmlConfig = JSON5.parse(await fs.readFile('.mjmlConfig.json5', 'utf8'));
     return {dataHotellerie, mjmlConfig };
   } catch (error) {
@@ -103,6 +103,8 @@ const pugToMjml = () => {
     return gulp.src('./src/*.pug')
         .pipe(pug({
             locals: dataHotellerie, //Passer les données JSON au template pug
+        })) 
+        .pipe(pug({
             pretty: true, // À retirer pour la production
             debug: false, // À retirer pour la production
             compileDebug: false,
