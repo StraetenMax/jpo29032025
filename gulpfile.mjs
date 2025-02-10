@@ -26,10 +26,13 @@ const __dirname = dirname(__filename);
 // Fonction asynchrone pour charger les configurations JSON5
 const loadConfigs = async () => {
   try {
+    //const dataHotellerie = JSON5.parse(await fs.readFileSync(path.join(__dirname, './src/includes/hotellerie/dataHotellerie.json5'), 'utf8'));
+    const dataHotellerie = JSON5.parse(await fs.readFileSync(filePath, 'utf8'));
     const mjmlConfig = JSON5.parse(await fs.readFile('.mjmlConfig.json5', 'utf8'));
-    return { mjmlConfig };
+    return {dataHotellerie, mjmlConfig };
   } catch (error) {
     console.error('Error loading configs:', error);
+    console.error(`Failed to load configurations from ${filePath}:`, error);
     throw new Error('Failed to load configurations');
   }
 };
@@ -96,8 +99,10 @@ const cleanDist = () => {
 
 // Pug vers Mjml
 const pugToMjml = () => {
+    const dataHotellerie = loadConfigs();
     return gulp.src('./src/*.pug')
         .pipe(pug({
+            locals: dataHotellerie, //Passer les données JSON au template pug
             pretty: true, // À retirer pour la production
             debug: false, // À retirer pour la production
             compileDebug: false,

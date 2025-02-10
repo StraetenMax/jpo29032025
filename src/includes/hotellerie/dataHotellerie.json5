@@ -1,0 +1,29 @@
+
+{
+    "formations" :[{
+        "image": "https://i.ibb.co/3mbWWJ4n/EsaIogo.jpg",
+        "alt": "Formation Man Mise à Niveau",
+        "type": "Formation Initiale",
+        "caracteristiques" : [
+            { 
+            "Nom": "MAN Mise à Niveau Hôtellerie Restauration",
+            "bac": "Post-Bac",
+            "durée" : "1 an",
+            "lesPlus": "Bourse Ecosup",
+            "financement": "Formation prise en charge par l'étudiant"
+            }]
+    },
+    {
+    "Image": "https://i.ibb.co/3mbWWJ4n/EsaIogo.jpg",
+    "alt": "Formation Man Mise à Niveau",
+    "type": "Formation en Apprentissage",
+    "caracteristiques" : [
+        { 
+            "Nom": "BTS Management de l'Hôtellerie - Restauration",
+            "bac": "Post-Bac",
+            "durée" : " Durée : 2 ans",
+            "lesPlus": "Le Plus : Diplôme reconnue par l'État",
+            "financement": "Formation gratuite et rémunérée."
+        }
+    ]}
+]}
