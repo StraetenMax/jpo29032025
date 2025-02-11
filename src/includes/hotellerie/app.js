@@ -3,7 +3,7 @@ const path = require('path');
 const pug = require('pug');
 
 // Lire le fichier JSON
-const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'dataHotellerie.json'), 'utf8'));
+const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'dataHotellerie.json5'), 'utf8'));
 
 // Compiler le template Pug avec les données JSON
 const compiledFunction = pug.compileFile(path.join(__dirname, '_formations.pug'));
