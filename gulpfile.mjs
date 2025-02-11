@@ -104,8 +104,7 @@ const pugToMjml = () => {
         .pipe(pug({
             locals: {
                 forms: [
-                  { image: 'path/to/image1.jpg', alt: 'Formation 1' },
-                  { image: 'path/to/image2.jpg', alt: 'Formation 2' }
+                  { image: 'path/to/logo.image', alt: 'logo.alt' }
                 ]
               }   //locals: dataHotellerie, //Passer les données JSON au template pug
         })) 
