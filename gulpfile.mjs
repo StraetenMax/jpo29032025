@@ -17,6 +17,7 @@ import liveServer from 'live-server';
 import path, { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { promises as fs } from 'fs'; // Ajouté pour lire le fichier JSON
+//import loadConfigs from './path-to-your-config-loader.mjs'; // Assurez-vous que ce chemin est correct
 //-import { mkdir } from 'fs/promises'; // Pour créer des répertoires
 
 // Définit --dirname
@@ -98,17 +99,28 @@ const cleanDist = () => {
 };
 
 // Pug vers Mjml
-const pugToMjml = () => {
-    const dataHotellerie = loadConfigs();
+const pugToMjml = async () => {
+    const data = await loadConfigs();
+    const dataHotellerie = data.dataHotellerie;
+    // Vérifiez que dataHotellerie est bien définie
+    if (!dataHotellerie) {
+        throw new Error('dataHotellerie is not defined. Check the loadConfigs function.');
+    }
+    console.log('Data loaded:', dataHotellerie);
+    // Déclarez vos listes de logos ici
+    const logosList1 = dataHotellerie.logosList1 || [];
+    const logosList2 = dataHotellerie.logosList2 || [];
+    const logosList3 = dataHotellerie.logosList3 || [];
+    const logosList4 = dataHotellerie.logosList4 || [];
     return gulp.src('./src/*.pug')
         .pipe(pug({
             locals: {
-                forms: [
-                  { image: 'path/to/logo.image', alt: 'logo.alt' }
-                ]
-              }   //locals: dataHotellerie, //Passer les données JSON au template pug
-        })) 
-        .pipe(pug({
+                logosList1,
+                logosList2,
+                logosList3,
+                logosList4,
+                ...dataHotellerie // Passez les données JSON au template Pug
+            },
             pretty: true, // À retirer pour la production
             debug: false, // À retirer pour la production
             compileDebug: false,
