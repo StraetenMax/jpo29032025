@@ -102,7 +102,12 @@ const pugToMjml = () => {
     const dataHotellerie = loadConfigs();
     return gulp.src('./src/*.pug')
         .pipe(pug({
-            locals: dataHotellerie, //Passer les données JSON au template pug
+            locals: {
+                forms: [
+                  { image: 'path/to/image1.jpg', alt: 'Formation 1' },
+                  { image: 'path/to/image2.jpg', alt: 'Formation 2' }
+                ]
+              }   //locals: dataHotellerie, //Passer les données JSON au template pug
         })) 
         .pipe(pug({
             pretty: true, // À retirer pour la production
