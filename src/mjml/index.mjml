@@ -23,6 +23,7 @@
       <mj-class name="T-1" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="13px" line-height="17px" font-weight="400"/>
       <mj-class name="T-2" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="10px" line-height="12px" font-weight="300"/>
       <mj-class name="L" align="left" border-style="solid" border-width="0.75px" width="80px" padding="10px 0"></mj-class>
+      <mj-class name="top" vertical-align="top"></mj-class>
       <mj-class name="cT+1" color="#1a1a1a"/>
       <mj-class name="cT+0" color="#4d4d4d"/>
       <mj-class name="c-0" color="#C21718"/>
@@ -88,16 +89,12 @@
       <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
         <mj-text align="left" padding="0px" color="#74151E" mj-class="T-1" font-weight="700" text-transform="uppercase">Formation en Apprentissage</mj-text>
         <mj-text align="left" padding="2px" mj-class="T+2-300 cT+1"><span style="font-weight:700;">Bachelor</span> Chargé(e) de Gestion commerciale en Hôtellerie</mj-text>
-        <mj-social padding="0" font-size="15px" icon-size="12px" mode="vertical">
-          <mj-social-element vertical-align="top" src="https://i.ibb.co/VLhFD7w/Instagram122024.png">Post-Bac+2,</mj-social-element>
-          <mj-social-element vertical-align="top" src="https://i.ibb.co/VLhFD7w/Instagram122024.png">Durée : <span style="font-weight:700;">1 an</span>,</mj-social-element>
-          <mj-social-element vertical-align="top" src="https://i.ibb.co/VLhFD7w/Instagram122024.png">Le Plus : <span style="font-weight:700;color:#1a1a1a;">Travel Week</span>, semaine immersive en mobilité internationale,</mj-social-element>
-          <mj-social-element vertical-align="top" src="https://i.ibb.co/VLhFD7w/Instagram122024.png">Formation gratuite et rémunérée.</mj-social-element>
+        <mj-social padding="0" icon-size="12px" mode="vertical" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> 
+          <mj-social-element mj-class="top" src="https://i.ibb.co/VLhFD7w/Instagram122024.png">Post-Bac+2,</mj-social-element>
+          <mj-social-element mj-class="top" src="https://i.ibb.co/VLhFD7w/Instagram122024.png">Durée : <span style="font-weight:700;">1 an</span>,</mj-social-element>
+          <mj-social-element mj-class="top" src="https://i.ibb.co/VLhFD7w/Instagram122024.png">Le Plus : <span style="font-weight:700;color:#1a1a1a;">Travel Week</span>, semaine immersive en mobilité internationale,</mj-social-element>
+          <mj-social-element mj-class="top" src="https://i.ibb.co/VLhFD7w/Instagram122024.png">Formation gratuite et rémunérée.</mj-social-element>
         </mj-social>
-        <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="" alt=""/></mj-text>
-        <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/></mj-text>
-        <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/></mj-text>
-        <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/></mj-text>
         <mj-spacer height="40px"></mj-spacer>
       </mj-column>
       <mj-column background-color="#ffffff" width="30%" vertical-align="top" padding="10px">
