@@ -5,6 +5,7 @@
     <mj-font name="Roboto" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&amp;display=swap"></mj-font>
     <mj-font name="fontAwesome" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <mj-raw>
+      <meta charset="UTF-8">
       <meta name='color-scheme' content='light'/>
       <meta name='supported-color-schemes' content='light'/>
       <meta name="format-detection" content="telephone=no"/>
@@ -77,10 +78,14 @@
         <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
           <mj-text align="left" padding="0px" color="#74151E" mj-class="T-1" font-weight="700" text-transform="uppercase">Formation Initiale</mj-text>
           <mj-text align="left" padding="2px" mj-class="T+2-300 cT+1"><span style="font-weight:700;">MAN</span> Mise à Niveau Hôtellerie Restauration</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Post-Bac,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Durée : <span style="font-weight:700;">1 an</span>,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Le Plus : <span style="font-weight:700;color:#1a1a1a;">Bourse Ecosup</span>,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Formation prise en charge par l'étudiant.</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Post-Bac,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Durée : <span style="font-weight:700;">1 an</span>,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Le Plus : <span style="font-weight:700;color:#1a1a1a;">Bourse Ecosup</span>,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Formation prise en charge par l'étudiant.</mj-text>
           <mj-spacer height="40px"></mj-spacer>
         </mj-column>
         <mj-column background-color="#ffffff" width="30%" vertical-align="top" padding="10px">
@@ -89,10 +94,14 @@
         <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
           <mj-text align="left" padding="0px" color="#74151E" mj-class="T-1" font-weight="700" text-transform="uppercase">Formation en Apprentissage</mj-text>
           <mj-text align="left" padding="2px" mj-class="T+2-300 cT+1"><span style="font-weight:700;">BTS</span> Management de l'Hôtellerie - Restauration</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Post-Bac,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Durée : <span style="font-weight:700;">2 ans</span>,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Le Plus : <span style="font-weight:700;color:#1a1a1a;">Diplôme reconnue par l'État</span>,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Formation gratuite et rémunérée.</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Post-Bac,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Durée : <span style="font-weight:700;">2 ans</span>,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Le Plus : <span style="font-weight:700;color:#1a1a1a;">Diplôme reconnue par l'État</span>,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Formation gratuite et rémunérée.</mj-text>
           <mj-spacer height="40px"></mj-spacer>
         </mj-column>
         <mj-column background-color="#ffffff" width="30%" vertical-align="top" padding="15px">
@@ -101,10 +110,14 @@
         <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
           <mj-text align="left" padding="0px" color="#74151E" mj-class="T-1" font-weight="700" text-transform="uppercase">Formation en Apprentissage</mj-text>
           <mj-text align="left" padding="2px" mj-class="T+2-300 cT+1"><span style="font-weight:700;">Bachelor</span> Chargé(e) de Gestion commerciale en Hôtellerie</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Post-Bac+2,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Durée : <span style="font-weight:700;">1 an</span>,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Le Plus : <span style="font-weight:700;color:#1a1a1a;">Travel Week</span>, semaine immersive en mobilité internationale,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Formation gratuite et rémunérée.</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Post-Bac+2,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Durée : <span style="font-weight:700;">1 an</span>,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Le Plus : <span style="font-weight:700;color:#1a1a1a;">Travel Week</span>, semaine immersive en mobilité internationale,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Formation gratuite et rémunérée.</mj-text>
           <mj-spacer height="40px"></mj-spacer>
         </mj-column>
         <mj-column background-color="#ffffff" width="30%" vertical-align="top" padding="10px">
@@ -113,10 +126,14 @@
         <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
           <mj-text align="left" padding="0px" color="#74151E" mj-class="T-1" font-weight="700" text-transform="uppercase">Formation en Apprentissage</mj-text>
           <mj-text align="left" padding="2px" mj-class="T+2-300 cT+1"><span style="font-weight:700;">Mastère</span> Manager des Organisations en Hôtellerie</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Post-Bac+3,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Durée : <span style="font-weight:700;">2 ans</span>,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Le Plus : <span style="font-weight:700;">Double certification internationale</span>,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400"> <img style="padding:0;padding-right:8px;" width="12px" src="https://i.ibb.co/VLhFD7w/Instagram122024.png" alt=""/>Formation gratuite et rémunérée.</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Post-Bac+3,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Durée : <span style="font-weight:700;">2 ans</span>,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Le Plus : <span style="font-weight:700;">Double certification internationale</span>,</mj-text>
+          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Formation gratuite et rémunérée.</mj-text>
           <mj-spacer height="40px"></mj-spacer>
         </mj-column>
       </mj-section>
