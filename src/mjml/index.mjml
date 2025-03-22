@@ -154,69 +154,6 @@
         </mj-column>
       </mj-section>
     </mj-wrapper>
-    <mj-section background-color="#ffffff" padding="20px">
-      <mj-column width="450px">
-        <mj-text align="center" padding="0" mj-class="T+2-300 cT+1">Exemples d'entreprises accueillant nos étudiants en apprentissage</mj-text>
-      </mj-column>
-    </mj-section>
-    <mj-section background-color="#ffffff" padding="0px 60px 40px 60px"> 
-      <mj-group width="50%">
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/vz8Rrt2/LogoA12.jpg" alt="logo Fait Maison"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/z5ZgwTw/LogoA11.jpg" alt="logo de l'Hôtel l'Ermitage Gantois"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/L85ZfG1/LogoA10.jpg" alt="logo de la chaîne d'Hôtels Best Western"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/n6nKRBn/LogoA9.jpg" alt="logo Small Luxury Hotels"/>
-        </mj-column>
-      </mj-group>
-      <mj-group width="50%">
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/VHwDR7d/LogoA13.jpg" alt="logo de la chaîne de restauration les 3 Brasseurs"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/pRydwkm/LogoA1.jpg" alt="logo du groupe Accord"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/8z2m91y/LogoA2.jpg" alt="logo du groupe Global Hôtel Alliance"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/gw0vV3g/LogoA3.jpg" alt="logo l'hôtel l'Arbre voyageur"/>
-        </mj-column>
-      </mj-group>
-      <mj-group width="50%">
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/QXFVhNW/LogoA4.jpg" alt="logo de l'hôtel Carlton de Lille"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/zr8TQyS/LogoA5.jpg" alt="logo de l'Hôtel Lille Europe HLE"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/DKZDvtz/LogoA6.jpg" alt="logo de l'Hôtel Restaurant du Couvent des Minimes"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/VYL89kZ/LogoA7.jpg" alt="logo de la Sodexo"/>
-        </mj-column>
-      </mj-group>
-      <mj-group width="50%">
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/ZXr5mLx/LogoA8.jpg" alt="logo du Najeti - Hôtel Lille Nord"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/qNZP5dP/LogoA14.jpg" alt="logo Hôtel Moustache"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/PGss0H7/Hotellerie21.jpg" alt="logo du restaurant le Septentrion"/>
-        </mj-column>
-        <mj-column width="25%" padding="4px">
-          <mj-image padding="0" border="none" fluid-on-mobile="true" width="150px" src="https://i.ibb.co/JrbkKBG/Hotellerie20.jpg" alt="logo de l'Hôtel Le Bristol"/>
-        </mj-column>
-      </mj-group>
-    </mj-section>
     <mj-section background-color="#ffffff" padding="0px 20px">
       <mj-column width="450px">
         <mj-text align="center" padding="0" mj-class="T+2-300 cT+1">Pour préparer notre rencontre !</mj-text>
@@ -239,32 +176,6 @@
       <mj-column>
         <mj-text align="center" padding="14px 0" mj-class="T+2-700" color="#ffffff" letter-spacing="2px"><a style="text-decoration:none;color:#ffffff;" href="https://ecosup-hotellerie.fr" target="_blank">www.ecosup-hotellerie.fr</a></mj-text>
       </mj-column>
-    </mj-section>
-    <mj-section background-color="#d9d9d9" padding="20px 10px">
-      <mj-group width="40%">
-        <mj-column width="50%" vertical-align="top" padding="10px">
-          <mj-image align="center" padding="0" border="0" width="120px" src="https://i.ibb.co/6Y3byRf/logo-Qualiopijpo12142024.png" alt="logo qualiopi"></mj-image>
-          <mj-spacer height="10px"></mj-spacer>
-        </mj-column>
-        <mj-column width="50%" vertical-align="top" padding="10px">
-          <mj-image align="center" padding="0" border="0" width="120px" src="https://i.ibb.co/61w1cZf/logo-RNCPjpo12142024.png" alt="logo RNCP, répertoire national des certifications professionnelles"></mj-image>
-          <mj-spacer height="10px"></mj-spacer>
-        </mj-column>
-      </mj-group>
-      <mj-group width="60%">
-        <mj-column width="33.333333%" vertical-align="top" padding="10px">
-          <mj-image align="center" padding="0" border="0" width="100px" src="https://i.ibb.co/wWQzSdT/Plan-de-travail-1jpo12142024.png" alt="logo Formatives, certificateur"></mj-image>
-          <mj-spacer height="10px"></mj-spacer>
-        </mj-column>
-        <mj-column width="33.333333%" vertical-align="top" padding="10px">
-          <mj-image align="center" padding="0" border="0" width="80px" src="https://i.ibb.co/4KBjqnQ/logo-Fedejpo12142024.png" alt="logo FEDE, Federation for EDucation"></mj-image>
-          <mj-spacer height="10px"></mj-spacer>
-        </mj-column>
-        <mj-column width="33.333333%" vertical-align="top" padding="10px">
-          <mj-image align="center" padding="0" border="0" width="80px" src="https://i.ibb.co/NmWvQ57/logo-Academie-Lillejpo12142024.png" alt="logo de l'académie de Lille, éducation nationale"></mj-image>
-          <mj-spacer height="10px"></mj-spacer>
-        </mj-column>
-      </mj-group>
     </mj-section>
     <mj-section background-color="#e6e6e6" padding="20px 32px">
       <mj-column width="320px">
