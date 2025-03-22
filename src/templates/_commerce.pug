@@ -1,7 +1,7 @@
 mjml
     //- Head
     mj-head
-        mj-title JPO du 29 mars 2025 Ecosup Hôtellerie
+        mj-title JPO du 29 mars 2025 Ecosup Commerce
         mj-font(name='Roboto' href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap')
         mj-font(name="fontAwesome" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css")/
         mj-raw.
@@ -42,21 +42,13 @@ mjml
             }
         mj-breakpoint(width="480px")
     //- Body
-    mj-body(background-color='#f2f2f2' width="650px")
-        mj-raw.
-            <style type="text/css">
-                @media screen and (max-width: 480px) {
-                    .yahoostyle {
-                        background-color: green;
-                    }
-                }
-            </style>
+    mj-body(background-color='#f2f2f2' width="600px")
         //- content
         block content
         //- bloc header
-        block header001
-            include ../includes/hotellerie/_header001
-        //- bloc form003
+        block header002
+            include ../includes/commerce/_header002
+        //- bloc formations
         block form003
             include ../includes/commerce/_form003
         //- bloc partenaires Hôtellerie
@@ -64,7 +56,7 @@ mjml
             include ../includes/hotellerie/_partenaires
         //- bloc syrendre
         block cTa
-            include ../includes/hotellerie/_cTa
+            include ../includes/commerce/_cTa
         //- bloc argumentaires formations
             block arg
             include ../includes/hotellerie/_arg
