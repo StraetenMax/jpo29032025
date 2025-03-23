@@ -1,7 +1,7 @@
 mjml
     //- Head
     mj-head
-        mj-title JPO du 29 mars 2025 Ecosup Hôtellerie
+        mj-title JPO du 29 mars 2025 Ecosup Santé
         mj-font(name='Roboto' href='https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap')
         mj-font(name="fontAwesome" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css")/
         mj-raw.
@@ -14,26 +14,25 @@ mjml
             <meta name="format-detection" content="email=no"/>
         mj-attributes
             mj-all(font-family='Roboto, Arial, Helvetica,sans serif')/
-            mj-class(name='T+3' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='36px' line-height='36px' font-weight='900')/
-            mj-class(name='T+2-700' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='24px' line-height='28px' font-weight='700')/
-            mj-class(name='T+2-300' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='24px' line-height='28px' font-weight='300')/
-            mj-class(name='T700' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='16px' line-height='20px' font-weight='700')/
-            mj-class(name='T500' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='16px' line-height='20px' font-weight='500')/
-            mj-class(name='T400' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='16px' line-height='20px' font-weight="400")/
-            mj-class(name='T-1' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='13px' line-height='17px' font-weight="400")/
-            mj-class(name='T-2' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='10px' line-height='12px' font-weight="300")/
+            mj-class(name='T36-900' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='36px' line-height='36px' font-weight='900')/
+            mj-class(name='T24-700' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='24px' line-height='28px' font-weight='700')/
+            mj-class(name='T24-300' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='24px' line-height='28px' font-weight='300')/
+            mj-class(name='T16-700' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='16px' line-height='20px' font-weight='700')/
+            mj-class(name='T16-500' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='16px' line-height='20px' font-weight='500')/
+            mj-class(name='T16-400' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='16px' line-height='20px' font-weight="400")/
+            mj-class(name='T13-700' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='13px' line-height='17px' font-weight="700")/
+            mj-class(name='T13-400' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='13px' line-height='17px' font-weight="400")/
+            mj-class(name='T10-300' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='10px' line-height='12px' font-weight="300")/
             mj-class(name='L' align="left" border-style="solid" border-width="0.75px" width="80px" padding="10px 0")
             mj-class(name='top' vertical-align="top")
             //- Black colors text
-            mj-class(name="cT+1" color="#1a1a1a")/
-            mj-class(name="cT+0" color="#4d4d4d")/
+            mj-class(name="cT1" color="#1a1a1a")/
+            mj-class(name="cT0" color="#4d4d4d")/
             //- Colors
-            mj-class(name="c-0" color="#C21718")/
-            mj-class(name="bg-0" background-color="#C21718")/
-            mj-class(name="c+11" color="#f9d2d2")/
-            mj-class(name="c+1" color="#74151E")/
-            mj-class(name="bg+1" background-color="#74151E")/
-            mj-class(name="bg+11" background-color="#f9d2d2")/
+            mj-class(name="c0" color="#C21718")/
+            mj-class(name="bg0" background-color="#C21718")/
+            mj-class(name="c1" color="#74151E")/
+            mj-class(name="bg1" background-color="#74151E")/
         mj-style. 
             @media screen and (max-width: 480px) {
                 .yahoostyle {
@@ -54,7 +53,7 @@ mjml
         //- bloc partenaires Hôtellerie
             block partenaires
             include ../includes/hotellerie/_partenaires
-        //- bloc syrendre
+        //- bloc informations
         block _cTa
             include ../includes/aepe/_cTa
         //- bloc argumentaires formations
