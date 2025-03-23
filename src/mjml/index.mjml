@@ -28,10 +28,10 @@
       <mj-class name="top" vertical-align="top"></mj-class>
       <mj-class name="cT1" color="#1a1a1a"/>
       <mj-class name="cT0" color="#4d4d4d"/>
-      <mj-class name="c0" color="#C21718"/>
-      <mj-class name="bg0" background-color="#C21718"/>
-      <mj-class name="c1" color="#74151E"/>
-      <mj-class name="bg1" background-color="#74151E"/>
+      <mj-class name="c0" color="#2386c8"/>
+      <mj-class name="bg0" background-color="#2386c8"/>
+      <mj-class name="c1" color="#114364"/>
+      <mj-class name="bg1" background-color="#114364"/>
     </mj-attributes>
     <mj-style>
       @media screen and (max-width: 480px) {
@@ -48,7 +48,7 @@
         <mj-text align="center"><a style="color:#4d4d4d;font-size:10px;font-weight:500;line-height:12px" href="{{ mirror}}">Voir la version en ligne</a> &nbsp;&nbsp;|&nbsp;&nbsp; <a style="color:#4d4d4d;font-size:10px;font-weight:500;line-height:12px;" href="{{ unsubscribe }}">Se désinscrire de la liste de diffusion</a></mj-text>
       </mj-column>
     </mj-section>
-    <mj-section mj-class="bg+11" padding="0">
+    <mj-section padding="0">
       <mj-column>
         <mj-image padding="20px" align="left" width="153px" src="https://i.ibb.co/ZGht1kv/logo-EHotellerie.png" alt="logo Ecosup Hôtellerie "/>
       </mj-column>
@@ -66,77 +66,77 @@
     </mj-section>
     <mj-section background-color="#ffffff" padding="0"> 
       <mj-column width="480px">
-        <mj-text padding="20px 20px 0 20px" mj-class="T-1 cT+0"> <img style="padding:0 20px" align="left" vertical-align="top" width="80px" src="https://i.ibb.co/NNTT0VM/Helenejpo25052024.jpg"/>
-          <p style="margin:0px;padding-top:20px;padding-bottom:0px;padding-left:0px;padding-right:0px;text-align:left;vertical-align:bottom;font-weight:700;">Helène Salmon </p>
+        <mj-text padding="20px 20px 0 20px" mj-class="T13-400 cT0"> <img style="padding:0 20px" align="left" vertical-align="top" width="80px" src="https://i.ibb.co/NNTT0VM/Helenejpo25052024.jpg"/>
+          <p style="margin:0px;padding-top:20px;padding-bottom:0px;padding-left:0px;padding-right:0px;text-align:left;vertical-align:bottom;font-weight:700;color:#1a1a1a;">Helène Salmon </p>
           <p style="margin:0px;padding:0px;text-align:left;vertical-align:bottom;">Responsable des études</p>
           <p style="margin:0px;padding:0px;text-align:left;vertical-align:bottom;">chez Ecosup Hôtellerie</p>
         </mj-text>
-        <mj-text padding="10px 30px 0 30px" mj-class="c+1 T+3" letter-spacing="-1px">Ecosup Hôtellerie vous ouvre ses Portes&nbsp;!</mj-text>
-        <mj-text padding="10px 30px 0 30px" mj-class="T400 cT+1"><span style="font-weight:700;">{{ contact.PRENOM }}</span>, vous n'avez pas pu assister à notre journée portes ouvertes samedi dernier&nbsp;? Pas de souci&nbsp;! <span style="font-weight:700;">Ecosup Hôtellerie</span> organise une nouvelle session ce jeudi en fin d'après-midi. Rejoignez-nous pour&nbsp;:</mj-text>
-        <mj-text padding="2px 30px" mj-class="T400 cT+1">- Une <span style="font-weight:700;">visite guidée</span> de notre établissement,</mj-text>
-        <mj-text padding="2px 30px" mj-class="T400 cT+1">- Une <span style="font-weight:700;">rencontre</span> avec les responsables pédagogiques et intervenants professionnels,</mj-text>
-        <mj-text padding="2px 30px" mj-class="T400 cT+1">- Une élaboration du mode de financement.</mj-text>
-        <mj-button padding="20px 25px" width="280px" mj-class="T700 bg+1"><span style="text-transform:uppercase;">Journée Portes Ouvertes</span> samedi 29 Mars de 9h30 à 13h</mj-button>
+        <mj-text padding="10px 30px 0 30px" mj-class="T36-900 c0" letter-spacing="-1px">Ecosup Hôtellerie vous ouvre ses Portes&nbsp;!</mj-text>
+        <mj-text padding="10px 30px 0 30px" mj-class="T16-400 cT0"><span style="font-weight:700;color:#1a1a1a;">{{ contact.PRENOM }}</span>, vous n'avez pas pu assister à notre journée portes ouvertes samedi dernier&nbsp;? Pas de souci&nbsp;! <span style="font-weight:700;color:#1a1a1a;">Ecosup Hôtellerie</span> organise une nouvelle session ce jeudi en fin d'après-midi. Rejoignez-nous pour&nbsp;:</mj-text>
+        <mj-text padding="2px 30px" mj-class="T16-400 cT0">- Une <span style="font-weight:700;color:#1a1a1a;">visite guidée</span> de notre établissement,</mj-text>
+        <mj-text padding="2px 30px" mj-class="T16-400 cT0">- Une <span style="font-weight:700;color:#1a1a1a;">rencontre</span> avec les responsables pédagogiques et intervenants professionnels,</mj-text>
+        <mj-text padding="2px 30px" mj-class="T16-400 cT0">- Une élaboration du mode de financement.</mj-text>
+        <mj-button padding="20px 25px" width="280px" mj-class="T16-700 bg0"><span style="text-transform:uppercase;">Journée Portes Ouvertes</span> samedi 29 Mars de 9h30 à 13h</mj-button>
       </mj-column>
     </mj-section>
     <mj-wrapper background-color="#ffffff" padding="30px 20px 0 20px">
       <mj-section padding="0px" padding-bottom="10px">
         <mj-column width="450px">
-          <mj-text align="center" padding="0" mj-class="T+2-300 cT+1">Notre formation Petite Enfance</mj-text>
+          <mj-text align="center" padding="0" mj-class="T24-300 cT1">Nos formations en Secrétariat médical</mj-text>
         </mj-column>
       </mj-section>
       <mj-section padding="0px">
         <mj-column background-color="#ffffff" width="30%" vertical-align="top" padding="10px">
-          <mj-image align="left" padding="0" border-radius="10px" width="165px" src="https://i.ibb.co/3mbWWJ4n/EsaIogo.jpg" alt="formation BTS Management en Hôtellerie / Restauration"></mj-image>
+          <mj-image align="left" padding="0" border-radius="10px" width="165px" src="https://i.ibb.co/3mbWWJ4n/EsaIogo.jpg" alt=""></mj-image>
         </mj-column>
         <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
-          <mj-text align="left" padding="0px" color="#74151E" mj-class="T-1" font-weight="700" text-transform="uppercase">Formation en Apprentissage</mj-text>
-          <mj-text align="left" padding="2px" mj-class="T+2-300 cT+1"><span style="font-weight:700;">AEPE</span> Accompagnant(e) Éducatif Petite Enfance</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+          <mj-text align="left" padding="0px" mj-class="T13-700 c0" text-transform="uppercase">Formation en Apprentissage</mj-text>
+          <mj-text align="left" padding="2px" mj-class="T24-300 cT1"><span style="font-weight:700;">SM</span> Secrétaire médical(e)</mj-text>
+          <mj-text padding="0" align="left" mj-class="T16-400 cT0">
              <span style="color:#d9d9d9;">&#x27A4;</span> Post-Bac,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
-             <span style="color:#d9d9d9;">&#x27A4;</span> Durée : <span style="font-weight:700;">12 mois</span>,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+          <mj-text padding="0" align="left" mj-class="T16-400 cT0">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Durée : <span style="font-weight:700;color:#1a1a1a;">18 mois</span>,</mj-text>
+          <mj-text padding="0" align="left" mj-class="T16-400 cT0">
              <span style="color:#d9d9d9;">&#x27A4;</span> Formation gratuite et rémunérée.</mj-text>
           <mj-spacer height="40px"></mj-spacer>
         </mj-column>
         <mj-column background-color="#ffffff" width="30%" vertical-align="top" padding="10px">
-          <mj-image align="left" padding="0" border-radius="10px" width="165px" src="https://i.ibb.co/3mbWWJ4n/EsaIogo.jpg" alt="formation Bachelor Chargé(e) de Gestion Commerciale en Hôtellerie"></mj-image>
+          <mj-image align="left" padding="0" border-radius="10px" width="165px" src="https://i.ibb.co/3mbWWJ4n/EsaIogo.jpg" alt="formation BTS Management en Hôtellerie / Restauration"></mj-image>
         </mj-column>
         <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
-          <mj-text align="left" padding="0px" color="#74151E" mj-class="T-1" font-weight="700" text-transform="uppercase">Formation initiale</mj-text>
-          <mj-text align="left" padding="2px" mj-class="T+2-300 cT+1"><span style="font-weight:700;">AEPE</span> Accompagnant(e) Éducatif Petite Enfance</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
+          <mj-text align="left" padding="0px" mj-class="T13-700 c0" font-weight="700" text-transform="uppercase">Formation initiale</mj-text>
+          <mj-text align="left" padding="2px" mj-class="T24-300 cT1"><span style="font-weight:700;">SM</span> Secrétaire médical(e)</mj-text>
+          <mj-text padding="0" align="left" mj-class="T16-400 cT0">
              <span style="color:#d9d9d9;">&#x27A4;</span> Post-Bac,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
-             <span style="color:#d9d9d9;">&#x27A4;</span> Durée : <span style="font-weight:700;">12 mois</span>,</mj-text>
-          <mj-text padding="0" align="left" font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size="16px" line-height="20px" font-weight="400">
-             <span style="color:#d9d9d9;">&#x27A4;</span> Formation prise en charge par l'étudiant ou en partie avec le CPF.</mj-text>
-          <mj-spacer height="40px">      </mj-spacer>
+          <mj-text padding="0" align="left" mj-class="T16-400 cT0">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Durée : <span style="font-weight:700;color:#1a1a1a;">8 mois</span>,</mj-text>
+          <mj-text padding="0" align="left" mj-class="T16-400 cT0">
+             <span style="color:#d9d9d9;">&#x27A4;</span> Formation prise en charge par l'étudiant ou par un organisme extérieur. </mj-text>
+          <mj-spacer height="40px"></mj-spacer>
         </mj-column>
       </mj-section>
     </mj-wrapper>
     <mj-section background-color="#ffffff" padding="0px 20px">
       <mj-column width="450px">
-        <mj-text align="center" padding="0" mj-class="T+2-300 cT+1">Pour préparer notre rencontre !</mj-text>
+        <mj-text align="center" padding="0" mj-class="T24-300 cT1">Pour préparer notre rencontre !</mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff" padding="20px 20px 0 20px">
       <mj-column width="244px">
-        <mj-button align="center" vertical-align="middle" padding="0 0 20px 0" border="2px solid #C21718" border-radius="3px" inner-padding="14px 20px" background-color="transparent" css-class="bg-rollover-01 text-rollover" mj-class="T700 c-0" href="https://www.google.fr/maps/dir/+50.72123+,+3.15686"><i class="fa-solid fa-location-dot bg-rollover-01" style="font-family:FontAwesome;font-size:20px;line-height:20px;vertical-align:middle"></i> &nbsp;&nbsp;nous trouver</mj-button>
+        <mj-button align="center" vertical-align="middle" padding="0 0 20px 0" border="2px solid #2386c8" border-radius="3px" inner-padding="14px 20px" background-color="transparent" mj-class="T16-700 c0" href="https://www.google.fr/maps/dir/+50.72123+,+3.15686"><i class="fa-solid fa-location-dot" style="font-family:FontAwesome;font-size:20px;line-height:20px;vertical-align:middle"></i> &nbsp;&nbsp;nous trouver</mj-button>
       </mj-column>
       <mj-column width="244px">
-        <mj-button align="center" vertical-align="middle" padding="0 0 20px 0" border-radius="3px" inner-padding="16px 22px" css-class="bg-rollover-02" mj-class="T700 bg-0" href="https://ecosup-assurance.fr/wp-content/uploads/2025/01/SCI1dbqC.ics"><i class="fa-regular fa-calendar-days" style="font-family:FontAwesome;color:#ffffff;font-size:20px;line-height:20px;vertical-align:middle"></i> &nbsp;&nbsp;ajouter à mon agenda</mj-button>
+        <mj-button align="center" vertical-align="middle" padding="0 0 20px 0" border-radius="3px" inner-padding="16px 22px" mj-class="T16-700 bg0" href="https://ecosup-assurance.fr/wp-content/uploads/2025/01/SCI1dbqC.ics"><i class="fa-regular fa-calendar-days" style="font-family:FontAwesome;color:#ffffff;font-size:20px;line-height:20px;vertical-align:middle"></i> &nbsp;&nbsp;ajouter à mon agenda</mj-button>
       </mj-column>
     </mj-section>
     <mj-section background-color="#ffffff" padding-top="0" padding-right="20px" padding-left="20px">
       <mj-column>
-        <mj-text align="center" padding="0" mj-class="T-1 cT+0"><a style="font-family:Roboto, Arial, Helvetica, sans-serif;font-style:normal;font-size:13px;line-height:17px;font-weight:400;color:#4d4d4d;" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;dates=20250130T160000Z%2F20250130T180000Z&amp;details=Nous%20vous%20invitons%20%C3%A0%20visiter%20notre%20%C3%A9cole%20ECOSUP%20Campus%20pour%20d%C3%A9couvrir%20nos%20formations%20et%20notre%20campus.%20%C3%80%20tr%C3%A8s%20bient%C3%B4t%20chez%20ECOSUP%20%21%22&amp;location=17%20place%20Charles%20et%20Albert%20Roussel%20-%2059200%20TOURCOING&amp;text=Nocturne%20Portes%20Ouvertes" target="_blank" rel="noopener noreferrer" title="Save Event in Google Calendar">Google Calendar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="font-family:Roboto,Arial,Helvetica,sans-serif;font-style:normal;font-size:13px;line-height:17px;font-weight:400;color:#4d4d4d;" href="https://outlook.live.com/calendar/0/action/compose?allday=false&amp;body=Nous%20vous%20invitons%20%C3%A0%20visiter%20notre%20%C3%A9cole%20ECOSUP%20Campus%20pour%20d%C3%A9couvrir%20nos%20formations%20et%20notre%20campus.%20%C3%80%20tr%C3%A8s%20bient%C3%B4t%20chez%20ECOSUP%20%21%22&amp;enddt=2025-01-30T19%3A00%3A00&amp;location=17%20place%20Charles%20et%20Albert%20Roussel%20-%2059200%20TOURCOING&amp;path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;startdt=2025-01-30T17%3A00%3A00&amp;subject=Nocturne%20Portes%20Ouvertes" target="_blank" rel="noopener noreferrer" title="Save Event in Outlook Calendar">Outlook Calendar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="font-family:Roboto,Arial,Helvetica,sans-serif;font-style:normal;font-size:13px;line-height:17px;font-weight:400;color:#4d4d4d;" href="https://outlook.office.com/calendar/0/action/compose?allday=false&amp;body=Nous%20vous%20invitons%20%C3%A0%20visiter%20notre%20%C3%A9cole%20ECOSUP%20Campus%20pour%20d%C3%A9couvrir%20nos%20formations%20et%20notre%20campus.%20%C3%80%20tr%C3%A8s%20bient%C3%B4t%20chez%20ECOSUP%20%21%22&amp;enddt=2025-01-30T19%3A00%3A00&amp;location=17%20place%20Charles%20et%20Albert%20Roussel%20-%2059200%20TOURCOING&amp;path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;startdt=2025-01-30T17%3A00%3A00&amp;subject=Nocturne%20Portes%20Ouvertes" target="_blank" rel="noopener noreferrer" title="Save Event in Office 365 Calendar">Office 365 Calendar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="font-family:Roboto,Arial,Helvetica,sans-serif;font-style:normal;font-size:13px;line-height:17px;font-weight:400;color:#4d4d4d;" href="https://calendar.yahoo.com/?desc=Nous%20vous%20invitons%20%C3%A0%20visiter%20notre%20%C3%A9cole%20ECOSUP%20Campus%20pour%20d%C3%A9couvrir%20nos%20formations%20et%20notre%20campus.%20%C3%80%20tr%C3%A8s%20bient%C3%B4t%20chez%20ECOSUP%20%21%22&amp;dur=false&amp;et=20250130T180000Z&amp;in_loc=17%20place%20Charles%20et%20Albert%20Roussel%20-%2059200%20TOURCOING&amp;st=20250130T160000Z&amp;title=Nocturne%20Portes%20Ouvertes&amp;v=60" target="_blank" rel="noopener noreferrer" title="Save Event in Yahoo! Calendar">Yahoo! Calendar</a></mj-text>
+        <mj-text align="center" padding="0" mj-class="T13-400 cT0"><a style="font-family:Roboto, Arial, Helvetica, sans-serif;font-style:normal;font-size:13px;line-height:17px;font-weight:400;color:#4d4d4d;" href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;dates=20250130T160000Z%2F20250130T180000Z&amp;details=Nous%20vous%20invitons%20%C3%A0%20visiter%20notre%20%C3%A9cole%20ECOSUP%20Campus%20pour%20d%C3%A9couvrir%20nos%20formations%20et%20notre%20campus.%20%C3%80%20tr%C3%A8s%20bient%C3%B4t%20chez%20ECOSUP%20%21%22&amp;location=17%20place%20Charles%20et%20Albert%20Roussel%20-%2059200%20TOURCOING&amp;text=Nocturne%20Portes%20Ouvertes" target="_blank" rel="noopener noreferrer" title="Save Event in Google Calendar">Google Calendar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="font-family:Roboto,Arial,Helvetica,sans-serif;font-style:normal;font-size:13px;line-height:17px;font-weight:400;color:#4d4d4d;" href="https://outlook.live.com/calendar/0/action/compose?allday=false&amp;body=Nous%20vous%20invitons%20%C3%A0%20visiter%20notre%20%C3%A9cole%20ECOSUP%20Campus%20pour%20d%C3%A9couvrir%20nos%20formations%20et%20notre%20campus.%20%C3%80%20tr%C3%A8s%20bient%C3%B4t%20chez%20ECOSUP%20%21%22&amp;enddt=2025-01-30T19%3A00%3A00&amp;location=17%20place%20Charles%20et%20Albert%20Roussel%20-%2059200%20TOURCOING&amp;path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;startdt=2025-01-30T17%3A00%3A00&amp;subject=Nocturne%20Portes%20Ouvertes" target="_blank" rel="noopener noreferrer" title="Save Event in Outlook Calendar">Outlook Calendar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="font-family:Roboto,Arial,Helvetica,sans-serif;font-style:normal;font-size:13px;line-height:17px;font-weight:400;color:#4d4d4d;" href="https://outlook.office.com/calendar/0/action/compose?allday=false&amp;body=Nous%20vous%20invitons%20%C3%A0%20visiter%20notre%20%C3%A9cole%20ECOSUP%20Campus%20pour%20d%C3%A9couvrir%20nos%20formations%20et%20notre%20campus.%20%C3%80%20tr%C3%A8s%20bient%C3%B4t%20chez%20ECOSUP%20%21%22&amp;enddt=2025-01-30T19%3A00%3A00&amp;location=17%20place%20Charles%20et%20Albert%20Roussel%20-%2059200%20TOURCOING&amp;path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent&amp;startdt=2025-01-30T17%3A00%3A00&amp;subject=Nocturne%20Portes%20Ouvertes" target="_blank" rel="noopener noreferrer" title="Save Event in Office 365 Calendar">Office 365 Calendar</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a style="font-family:Roboto,Arial,Helvetica,sans-serif;font-style:normal;font-size:13px;line-height:17px;font-weight:400;color:#4d4d4d;" href="https://calendar.yahoo.com/?desc=Nous%20vous%20invitons%20%C3%A0%20visiter%20notre%20%C3%A9cole%20ECOSUP%20Campus%20pour%20d%C3%A9couvrir%20nos%20formations%20et%20notre%20campus.%20%C3%80%20tr%C3%A8s%20bient%C3%B4t%20chez%20ECOSUP%20%21%22&amp;dur=false&amp;et=20250130T180000Z&amp;in_loc=17%20place%20Charles%20et%20Albert%20Roussel%20-%2059200%20TOURCOING&amp;st=20250130T160000Z&amp;title=Nocturne%20Portes%20Ouvertes&amp;v=60" target="_blank" rel="noopener noreferrer" title="Save Event in Yahoo! Calendar">Yahoo! Calendar</a></mj-text>
       </mj-column>
     </mj-section>
-    <mj-section mj-class="bg+1" padding="0 20px">
+    <mj-section mj-class="bg1" padding="0 20px">
       <mj-column>
-        <mj-text align="center" padding="14px 0" mj-class="T+2-700" color="#ffffff" letter-spacing="2px"><a style="text-decoration:none;color:#ffffff;" href="https://ecosup-hotellerie.fr" target="_blank">www.ecosup-sante.fr</a></mj-text>
+        <mj-text align="center" padding="14px 0" mj-class="T24-700" color="#ffffff" letter-spacing="2px"><a style="text-decoration:none;color:#ffffff;" href="https://ecosup-sante.fr/secretaire-medicale-2" target="_blank">www.ecosup-sante.fr</a></mj-text>
       </mj-column>
     </mj-section>
     <mj-section background-color="#e6e6e6" padding="20px 32px">
