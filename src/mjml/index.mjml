@@ -87,7 +87,7 @@
       </mj-section>
       <mj-section padding="0px">
         <mj-column background-color="#ffffff" width="30%" vertical-align="top" padding="10px">
-          <mj-image align="left" padding="0" border-radius="10px" width="165px" src="https://i.ibb.co/3mbWWJ4n/EsaIogo.jpg" alt="formation BTS Management en Hôtellerie / Restauration"></mj-image>
+          <mj-image align="left" padding="0" border-radius="10px" width="165px" src="https://i.ibb.co/whPywHFL/tour1.jpg" alt="formation BTS Tourisme"></mj-image>
         </mj-column>
         <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
           <mj-text align="left" padding="0px" mj-class="T13-700 c0" text-transform="uppercase">Formation en Apprentissage</mj-text>
@@ -103,7 +103,7 @@
           <mj-spacer height="40px"></mj-spacer>
         </mj-column>
         <mj-column background-color="#ffffff" width="30%" vertical-align="top" padding="10px">
-          <mj-image align="left" padding="0" border-radius="10px" width="165px" src="https://i.ibb.co/3mbWWJ4n/EsaIogo.jpg" alt="formation Bachelor Chargé(e) de Gestion Commerciale en Hôtellerie"></mj-image>
+          <mj-image align="left" padding="0" border-radius="10px" width="165px" src="https://i.ibb.co/Lhk7gm0t/tour2.jpg" alt="formation Bachelor Chargé(e) de Gestion Commerciale en Tourisme."></mj-image>
         </mj-column>
         <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
           <mj-text align="left" padding="0px" mj-class="T13-700 c0" text-transform="uppercase">Formation en Apprentissage</mj-text>
@@ -119,7 +119,7 @@
           <mj-spacer height="40px"></mj-spacer>
         </mj-column>
         <mj-column background-color="#ffffff" width="30%" vertical-align="top" padding="10px">
-          <mj-image align="left" padding="0" width="165px" border-radius="10px" src="https://i.ibb.co/3mbWWJ4n/EsaIogo.jpg" alt=""></mj-image>
+          <mj-image align="left" padding="0" width="165px" border-radius="10px" src="https://i.ibb.co/vttbRjy/tour3.jpg" alt="formation Mastère Management Stratégie des Entreprises du Tourisme."></mj-image>
         </mj-column>
         <mj-column background-color="#ffffff" width="70%" vertical-align="top" padding="10px">
           <mj-text align="left" padding="0px" mj-class="T13-700 c0" text-transform="uppercase">Formation en Apprentissage</mj-text>
