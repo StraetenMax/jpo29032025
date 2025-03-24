@@ -20,8 +20,6 @@ mjml
             mj-class(name='T16-700' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='16px' line-height='20px' font-weight='700')/
             mj-class(name='T16-500' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='16px' line-height='20px' font-weight='500')/
             mj-class(name='T16-400' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='16px' line-height='20px' font-weight="400")/
-            
-
             mj-class(name='T13-700' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='13px' line-height='17px' font-weight="700")/
             mj-class(name='T13-400' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='13px' line-height='17px' font-weight="400")/
             mj-class(name='T10-300' font-family="Roboto, Arial, Helvetica, sans-serif" font-style="normal" font-size='10px' line-height='12px' font-weight="300")/
@@ -35,12 +33,6 @@ mjml
             mj-class(name="bg0" background-color="#944694")/
             mj-class(name="c1" color="#644092")/
             mj-class(name="bg1" background-color="#644092")/
-        mj-style. 
-            @media screen and (max-width: 480px) {
-                .yahoostyle {
-                    background-color: green;
-                }
-            }
         mj-breakpoint(width="480px")
     //- Body
     mj-body(background-color='#f2f2f2' width="600px")
@@ -52,15 +44,9 @@ mjml
         //- bloc formations
         block form003
             include ../includes/assurance/_form003
-        //- bloc partenaires Hôtellerie
-            block partenaires
-            include ../includes/hotellerie/_partenaires
         //- bloc syrendre
         block cTa
             include ../includes/assurance/_cTa
-        //- bloc argumentaires formations
-            block arg
-            include ../includes/hotellerie/_arg
         //- bloc footer
         block footer
             include ../includes/_footer 

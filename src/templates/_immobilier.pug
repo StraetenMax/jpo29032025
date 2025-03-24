@@ -33,12 +33,6 @@ mjml
             mj-class(name="bg0" background-color="#EC6608")/
             mj-class(name="c1" color="#AA3E17")/
             mj-class(name="bg1" background-color="#AA3E17")/
-        mj-style. 
-            @media screen and (max-width: 480px) {
-                .yahoostyle {
-                    background-color: green;
-                }
-            }
         mj-breakpoint(width="480px")
     //- Body
     mj-body(background-color='#f2f2f2' width="600px")
@@ -50,15 +44,9 @@ mjml
         //- bloc formation
         block form003
             include ../includes/immobilier/_form003
-        //- bloc partenaires Hôtellerie
-            block partenaires
-            include ../includes/hotellerie/_partenaires
         //- bloc informations
         block cTa
             include ../includes/immobilier/_cTa
-        //- bloc argumentaires formations
-            block arg
-            include ../includes/hotellerie/_arg
         //- bloc footer
         block footer
             include ../includes/_footer 
